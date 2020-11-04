@@ -2,6 +2,7 @@
 namespace Pctco\Coding\Skip32;
 use Pctco\Coding\Skip32\Skip32;
 use Pctco\Coding\Skip32\Skip32Cipher;
+use think\Config;
 class Skip{
    /**
    * @name key
@@ -10,10 +11,7 @@ class Skip{
    * @return string
    **/
    private static function key($key){
-      $array = [
-         'member'   =>   '01a2b3c456d78e9f0123',
-         'jurisdiction'   =>   '012345a67b8cd9e0f123'
-      ];
+      $array = Config::get('skip');
       return $array[$key];
    }
    /**
