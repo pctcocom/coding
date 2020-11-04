@@ -1,5 +1,5 @@
 <?php
-namespace Pctco\Coding\Skip32Cipher;
+namespace Pctco\Coding\Skip32;
 /**
  * Skip32 php implementation
  * 32-bit block cipher based on Skipjack
