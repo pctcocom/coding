@@ -1,7 +1,7 @@
 <?php
-namespace Pctco\Coding;
-use Pctco\Coding\Skip32;
-use Pctco\Coding\Skip32Cipher;
+namespace Pctco\Coding\Skip32;
+use Pctco\Coding\Skip32\Skip32;
+use Pctco\Coding\Skip32\Skip32Cipher;
 class Skip{
    /**
    * @name key
