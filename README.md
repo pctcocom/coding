@@ -19,5 +19,5 @@ Skip::en('member',1234);
 * @param mixed $int  需要解密整数 最大数值 4294967295
 * @return int
 **/
-Skip::en('member',1234);
+Skip::de('member',1234);
 ```
