@@ -2,7 +2,7 @@
 namespace Pctco\Coding\Skip32;
 use Pctco\Coding\Skip32\Skip32;
 use Pctco\Coding\Skip32\Skip32Cipher;
-use think\Config;
+use think\facade\Config;
 class Skip{
    /**
    * @name key
@@ -11,7 +11,7 @@ class Skip{
    * @return string
    **/
    private static function key($key){
-      $array = Config::get('skip');
+      $array = Config::get('initialize.code.skip');
       return $array[$key];
    }
    /**
