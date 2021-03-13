@@ -1,5 +1,7 @@
 # coding
 
+
+## Skip
 ```
 use Pctco\Coding\Skip32\Skip;
 
@@ -22,7 +24,7 @@ Skip::en('member',1234);
 Skip::de('member',1234);
 ```
 
-
+## RandomString
 ```
 use Pctco\Coding\RandomString;
 
@@ -54,4 +56,17 @@ RandomString::random(5,0);
 * @return string
 **/
 RandomString::only(5,32,0);
+```
+
+## JsCode
+```
+use Pctco\Coding\JsCode;
+
+/**
+* @name decode
+* @describe 解密代码  (结合 extend/coding.js 使用)
+* @param mixed $str 需要解密的字符串
+* @return string
+**/
+JsCode::decode($str);
 ```

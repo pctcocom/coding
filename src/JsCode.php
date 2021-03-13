@@ -5,7 +5,7 @@ class JsCode{
    /**
    * @name decode
    * @describe 解密代码  (结合 extend/coding.js 使用)
-   * @param mixed $str 想要解密的字符串
+   * @param mixed $str 需要解密的字符串
    * @return string
    **/
    public static function decode($str){
