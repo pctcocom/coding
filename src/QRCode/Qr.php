@@ -22,7 +22,7 @@ class Qr{
 	**/
 	public function production($url,$ecc = 'L',$size = 6,$border = 1){
 		$path =
-		$this->initialize['resources']['path']['root'].'runtime'.DIRECTORY_SEPARATOR.'_vendor_'.DIRECTORY_SEPARATOR.'pctco'.DIRECTORY_SEPARATOR.'coding'.DIRECTORY_SEPARATOR.'QRCode'.DIRECTORY_SEPARATOR;
+		$this->initialize['resources']['path']['root'].'runtime'.DIRECTORY_SEPARATOR.'composer'.DIRECTORY_SEPARATOR.'pctco'.DIRECTORY_SEPARATOR.'coding'.DIRECTORY_SEPARATOR.'QRCode'.DIRECTORY_SEPARATOR;
 		/*------------------------------------------------
 		**	配置
 		------------------------------------------------*/
