@@ -9,7 +9,7 @@ class JsCode{
    * @return string
    **/
    public static function decode($str){
-      $staticchars = Config::get('initialize.code.js');
+      $staticchars = Config::get('initialize.code.key');
       $decodechars = "";
       for($i=1;$i<strlen($str);){
          $num0 = strpos($staticchars, $str[$i]);
