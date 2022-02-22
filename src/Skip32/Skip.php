@@ -27,7 +27,7 @@ class Skip{
       $key = self::key($key);
 
       // 溢出（无法在进行加密计算时启动）：当遇到超大值时选择填补机制
-      $multiple = $int/self::$MaxNumber;
+      $multiple = (int)$int/self::$MaxNumber;
       if ($multiple > 1) {
          // 获取倍数
          $multiple = (int)ceil($multiple);
