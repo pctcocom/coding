@@ -20,7 +20,7 @@ class Skip{
    * @return int
    **/
    private static function key($key){
-      $array = Config::get('initialize.code.skip');
+      $array = Config::get('initialize.safety.skip');
       return $array[$key];
    }
    public static function en($key,$int){
