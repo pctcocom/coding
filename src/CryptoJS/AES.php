@@ -10,12 +10,13 @@ class AES{
      ** 加密
      *? @date 22/02/16 12:53
      *  @param String $data 想要加密的数据
-     *  @param String $passphrase 加密密钥
+     *  @param String $token 加密密钥
      *! @return String
      */
-    public static function encrypt($data, $passphrase, $salt = null) {
+    public static function encrypt($data, $token, $salt = null) {
+        if (is_array($data)) $data = json_encode($data);
         $salt = $salt ?: openssl_random_pseudo_bytes(8);
-        list($key, $iv) = self::evpkdf($passphrase, $salt);
+        list($key, $iv) = self::evpkdf($token, $salt);
         $ct = openssl_encrypt($data, 'aes-256-cbc', $key, true, $iv);
         return self::encode($ct, $salt);
     }
@@ -23,21 +24,21 @@ class AES{
      ** 解密
      *? @date 22/02/16 12:53
      *  @param String $base64 想要解密的数据
-     *  @param String $passphrase 解密密钥
+     *  @param String $token 解密密钥
      *! @return 
      */
-    public static function decrypt($base64, $passphrase) {
+    public static function decrypt($base64, $token) {
         list($ct, $salt) = self::decode($base64);
-        list($key, $iv) = self::evpkdf($passphrase, $salt);
+        list($key, $iv) = self::evpkdf($token, $salt);
         $data = openssl_decrypt($ct, 'aes-256-cbc', $key, true, $iv);
         return $data;
     }		
     
-    public static function evpkdf($passphrase, $salt) {
+    public static function evpkdf($token, $salt) {
         $salted = '';
         $dx = '';
         while (strlen($salted) < 48) {
-            $dx = md5($dx . $passphrase . $salt, true);
+            $dx = md5($dx . $token . $salt, true);
             $salted .= $dx;
         }
         $key = substr($salted, 0, 32);

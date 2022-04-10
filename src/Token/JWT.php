@@ -121,7 +121,7 @@ class JWT
                 throw new UnexpectedValueException('"kid" empty, unable to lookup correct key');
             }
         }
-
+        
         // Check the signature
         if (!static::verify("$headb64.$bodyb64", $sig, $key, $header->alg)) {
             throw new SignatureInvalidException('Signature verification failed');
