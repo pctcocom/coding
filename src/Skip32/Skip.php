@@ -2,7 +2,7 @@
 namespace Pctco\Coding\Skip32;
 use Pctco\Coding\Skip32\Skip32;
 use Pctco\Coding\Skip32\Skip32Cipher;
-use think\facade\Config;
+use think\facade\Cache;
 class Skip{
    /** 
     ** 目前 Skip 最大值是加密到  4294967295  （已解决现在可以无限加密）
@@ -20,7 +20,8 @@ class Skip{
    * @return int
    **/
    private static function key($key){
-      $array = Config::get('initialize.safety.skip');
+      $initialize = Cache::store('config')->get(md5('app-middleware-configuration'));
+      $array = $initialize['initialize']['safety']['skip'];
       return $array[$key];
    }
    public static function en($key,$int){
